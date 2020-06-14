@@ -8,13 +8,14 @@ const forecast = require('./utils/forecast');
 
 const app = express();
 
+// get hold of the port from the env
+const port = process.env.PORT || 3000;
+
 // set up required paths
 const root = path.join(__dirname, '../public');
 const partials = path.join(__dirname, '../views/partials');
 
 console.log({ root });
-
-const port = 3000;
 
 // configure handlebars
 app.set('view engine', 'hbs');
