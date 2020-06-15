@@ -31,13 +31,14 @@ const forecast = function (latitude, longitude, cb) {
       // we have valid weather
 
       const current = response.body.current;
-      const { weather_descriptions, temperature, feelslike } = current;
+      const { weather_descriptions, temperature, feelslike, weather_icons } = current;
 
-      let weather = `It is currently ${weather_descriptions[0].toLowerCase()}, ${temperature} degrees`;
+      let weather = `${weather_descriptions[0]}, ${temperature} degrees`;
       if (temperature !== feelslike) weather += `, but feels like ${feelslike}`;
 
+      const [icon] = weather_icons;
       const noError = undefined;
-      cb(noError, weather);
+      cb(noError, { weather, icon });
     });
 };
 

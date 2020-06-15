@@ -6,7 +6,14 @@ const locations = document.querySelector('.locations');
 const li = ({ name, forecast }) => {
   const el = document.createElement('li');
   el.classList.add('location');
-  el.innerHTML = `${name}<br>${forecast}`;
+  const { icon, weather } = forecast;
+  console.log({ forecast });
+  el.style.backgroundImage = `url(${icon})`;
+  el.innerHTML = `${name}<br>${weather}`;
+
+  // el.style.listStyleImage = `url('${icon}')`;
+  // el.style.listStylePosition = 'inside';
+  console.log({ el });
   locations.prepend(el);
 };
 

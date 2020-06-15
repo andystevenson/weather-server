@@ -62,18 +62,18 @@ button {
 }
 
 ul {
-  width: 70%;
-  height: 100%;
   overflow: auto;
   list-style: none;
   padding: 0px;
 }
 
-.location {
-  border: 1px solid black;
-  padding: 8px;
-  margin-bottom: 1px;
+li {
+  background: white left center no-repeat;
+  padding: 12px;
+  padding-left: 70px;
 }
+
+.location {}
 
 .error {
   border: 1px solid black;
@@ -81,4 +81,8 @@ ul {
   margin-block: 1px;
   background: red;
   color: white;
+}
+
+.weather-icon {
+  float: left;
 }
